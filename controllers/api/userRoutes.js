@@ -24,3 +24,5 @@ router.get("/logout", async (res, req) => {
         res.statusCode(500).json(err);
     }
 });
+
+module.exports = router;
