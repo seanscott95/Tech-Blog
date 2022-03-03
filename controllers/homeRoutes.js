@@ -25,7 +25,7 @@ router.get("/login", async (res, req) => {
     }
 });
 
-router.get("/post:id", async (res, req) => {
+router.get("/post/:id", async (res, req) => {
     try {
         res.statusCode(200);
     } catch (err) {
