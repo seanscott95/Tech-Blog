@@ -36,6 +36,7 @@ router.get("/login", async (res, req) => {
     }
 });
 
+// include comment model???????
 router.get("/post/:id", async (res, req) => {
     try {
         const postData = await Post.findByPk(req.params.id, {
