@@ -9,7 +9,7 @@
             <input class="form-input" type="text" id="description-input" />
         </div>
         <div class="form-group">
-            <button class="btn btn-primary" type="submit">POST</button>
+            <button class="btn btn-primary" type="submit"><a href="/dashboard/newPost">POST</a></button>
         </div>
     </form>
 </div>
@@ -25,6 +25,9 @@
         </div>
         <div class="user-info">
             <p>Post by {{user.name}} on {{format_date created_at}}</p>
+        </div>
+        <div>
+            <a href="/dashboard/editPost/{{id}}" class="edit">EDIT</a>
         </div>
     </article>
 </div>
