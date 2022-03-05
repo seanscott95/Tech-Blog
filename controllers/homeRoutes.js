@@ -10,8 +10,6 @@ router.get("/", async (req, res) => {
         const posts = postData.map((post) => post.get ({ plain: true }));
 
         res.render('homepage', { posts });
-        res.render('homepage');
-        // res.status(200).json({ message: "Hello" });
     } catch (err) {
         res.status(500).json(err);
     }
