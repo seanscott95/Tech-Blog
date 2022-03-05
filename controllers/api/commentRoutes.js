@@ -1,19 +1,19 @@
 const router = require('express').Router();
 const { Comment } = require('../../models');
 
-router.post("/", async (res, req) => {
+router.post("/", async (req, res) => {
     try {
-        res.statusCode(200);
+        res.status(200);
     } catch (err) {
-        res.statusCode(500).json(err);
+        res.status(500).json(err);
     }
 });
 
-router.delete("/:id", async (res, req) => {
+router.delete("/:id", async (req, res) => {
     try {
-        res.statusCode(200);
+        res.status(200);
     } catch (err) {
-        res.statusCode(500).json(err);
+        res.status(500).json(err);
     }
 });
 

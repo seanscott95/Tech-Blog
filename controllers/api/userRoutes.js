@@ -1,27 +1,27 @@
 const router = require('express').Router();
 const { User } = require('../../models');
 
-router.get("/", async (res, req) => {
+router.get("/", async (req, res) => {
     try {
-        res.statusCode(200);
+        res.status(200);
     } catch (err) {
-        res.statusCode(500).json(err);
+        res.status(500).json(err);
     }
 });
 
-router.get("/login", async (res, req) => {
+router.get("/login", async (req, res) => {
     try {
-        res.statusCode(200);
+        res.status(200);
     } catch (err) {
-        res.statusCode(500).json(err);
+        res.status(500).json(err);
     }
 });
 
-router.get("/logout", async (res, req) => {
+router.get("/logout", async (req, res) => {
     try {
-        res.statusCode(200);
+        res.status(200);
     } catch (err) {
-        res.statusCode(500).json(err);
+        res.status(500).json(err);
     }
 });
 

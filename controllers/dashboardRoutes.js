@@ -1,27 +1,27 @@
 const router = require("express").Router();
 const { Post } = require("../models");
 
-router.get("/", async (res, req) => {
+router.get("/", async (req, res) => {
     try {
-        res.statusCode(200);
+        res.status(200);
     } catch (err) {
-        res.statusCode(500).json(err);
+        res.status(500).json(err);
     }
 });
 
-router.get("/newPost", async (res, req) => {
+router.get("/newPost", async (req, res) => {
     try {
-        res.statusCode(200);
+        res.status(200);
     } catch (err) {
-        res.statusCode(500).json(err);
+        res.status(500).json(err);
     }
 });
 
-router.get("/editPost:id", async (res, req) => {
+router.get("/editPost:id", async (req, res) => {
     try {
-        res.statusCode(200);
+        res.status(200);
     } catch (err) {
-        res.statusCode(500).json(err);
+        res.status(500).json(err);
     }
 });
 

@@ -1,31 +1,31 @@
 const router = require('express').Router();
 const { Post, Comment, User } = require('../models');
 
-router.get("/", async (res, req) => {
+router.get("/", async (req, res) => {
     try {
-        // const postData = await Post.findAll({
-        //     include: [User],
-        // });
+        const postData = await Post.findAll({
+            include: [User],
+        });
 
-        // const posts = postData.map((post) => post.get ({ plain: true }));
+        const posts = postData.map((post) => post.get ({ plain: true }));
 
-        // res.render('homepage', { posts });
-        // res.render('homepage');
-        res.statusCode(200).json({ message: Hello });
+        res.render('homepage', { posts });
+        res.render('homepage');
+        // res.status(200).json({ message: "Hello" });
     } catch (err) {
-        res.statusCode(500).json(err);
+        res.status(500).json(err);
     }
 });
 
-router.get("/dashboard", async (res, req) => {
+router.get("/dashboard", async (req, res) => {
     try {
         res.render('dashboard', { logged_in: req.session.logged_in });
     } catch (err) {
-        res.statusCode(500).json(err);
+        res.status(500).json(err);
     }
 });
 
-router.get("/login", async (res, req) => {
+router.get("/login", async (req, res) => {
     try {
         if (req.session.logged_in) {
             res.redirect('/');
@@ -34,12 +34,12 @@ router.get("/login", async (res, req) => {
         
           res.render('login');
     } catch (err) {
-        res.statusCode(500).json(err);
+        res.status(500).json(err);
     }
 });
 
 // include comment model???????
-router.get("/post/:id", async (res, req) => {
+router.get("/post/:id", async (req, res) => {
     try {
         const postData = await Post.findByPk(req.params.id, {
             include: [
@@ -57,7 +57,7 @@ router.get("/post/:id", async (res, req) => {
             logged_in: req.session.logged_in
           });
     } catch (err) {
-        res.statusCode(500).json(err);
+        res.status(500).json(err);
     }
 });
 
