@@ -30,7 +30,7 @@ router.get("/", async (req, res) => {
 
 router.get("/newPost", async (req, res) => {
     try {
-        res.status(200);
+        res.render("new-post");
     } catch (err) {
         res.status(500).json(err);
     }
