@@ -41,21 +41,28 @@ router.get("/login", async (req, res) => {
     }
 });
 
-// include comment model???????
 router.get("/post/:id", async (req, res) => {
     try {
         const postData = await Post.findByPk(req.params.id, {
             include: [
               {
                 model: User,
-                attributes: ['title', 'date_created'],
+                attributes: ['name'],
+              },
+              {
+                model: Comment,
+                attributes: ['id', 'description', 'user_id', 'post_id', 'created_at'],
+                include: {
+                    model: User,
+                    attributes: ['name'],
+                }
               },
             ],
           });
       
           const post = postData.get({ plain: true });
       
-          res.render('dashboard', {
+          res.render('single-post', {
             ...post,
             logged_in: req.session.logged_in
           });
