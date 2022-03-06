@@ -1,0 +1,17 @@
+[
+    {
+        "name": "Jason Statham",
+        "email": "js@gmail.com",
+        "password": "password123"
+    },
+    {
+        "name": "Morgan Freeman",
+        "email": "mf@gmail.com",
+        "password": "password234"
+    },
+    {
+        "name": "Bruce Willis",
+        "email": "bw@gmail.com",
+        "password": "password345"
+    }
+]

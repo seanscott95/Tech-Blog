@@ -1,0 +1,32 @@
+[
+    {
+        "user_id": "1",
+        "post_id": "1",
+        "description": "Makes sense!"
+    },
+    {
+        "user_id": "1",
+        "post_id": "1",
+        "description": "Good perspective!"
+    },
+    {
+        "user_id": "2",
+        "post_id": "1",
+        "description": "Thanks!"
+    },
+    {
+        "user_id": "2",
+        "post_id": "3",
+        "description": "I understand it better now!"
+    },
+    {
+        "user_id": "1",
+        "post_id": "3",
+        "description": "Whats lorem ipsum?"
+    },
+    {
+        "user_id": "1",
+        "post_id": "1",
+        "description": "Boo"
+    }
+]
