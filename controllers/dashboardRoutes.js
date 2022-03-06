@@ -1,7 +1,7 @@
 const router = require("express").Router();
 const { Post, User, Comment } = require("../models");
 
-router.post("/", async (req, res) => {
+router.get("/", async (req, res) => {
     try {
         const postData = await Post.findAll(req.session.user_id, {
             include: [
@@ -28,7 +28,7 @@ router.post("/", async (req, res) => {
     }
 });
 
-router.post("/newPost", async (req, res) => {
+router.get("/newPost", async (req, res) => {
     try {
         res.render("new-post");
     } catch (err) {
@@ -36,7 +36,7 @@ router.post("/newPost", async (req, res) => {
     }
 });
 
-router.post("/editPost:id", async (req, res) => {
+router.get("/editPost:id", async (req, res) => {
     try {
         const postData = await Post.findByPk(req.params.id, {
             include: [
