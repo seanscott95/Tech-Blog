@@ -1,7 +1,7 @@
 const router = require('express').Router();
 const { Post, Comment, User } = require('../models');
 
-router.get("/", async (req, res) => {
+router.post("/", async (req, res) => {
     try {
         const postData = await Post.findAll({
             include: [
@@ -20,7 +20,7 @@ router.get("/", async (req, res) => {
     }
 });
 
-router.get("/login", async (req, res) => {
+router.post("/login", async (req, res) => {
     try {
         if (req.session.logged_in) {
             res.redirect('/');
@@ -34,7 +34,7 @@ router.get("/login", async (req, res) => {
 });
 
 // renders a single post to the single-post handlebars
-router.get("/post/:id", async (req, res) => {
+router.post("/post/:id", async (req, res) => {
     try {
         const postData = await Post.findByPk(req.params.id, {
             include: [
