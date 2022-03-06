@@ -4,8 +4,14 @@ const { Comment } = require('../../models');
 // Creates a comment
 router.post("/", async (req, res) => {
     try {
-        
-        res.status(200);
+        if (req.session) {
+            const newComment = await Comment.create({
+                comment: req.body.comment,
+                blog_id: req.body.blog_id,
+                user_id: req.session.user_id,
+            })
+            res.status(200).json(newComment);
+        }
     } catch (err) {
         res.status(500).json(err);
     }
@@ -14,7 +20,19 @@ router.post("/", async (req, res) => {
 // Deletes a comment
 router.delete("/:id", async (req, res) => {
     try {
-        res.status(200);
+        const commentData = await Comment.destroy({
+            where: {
+                id: req.params.id,
+                user_id: req.session.user_id,
+            },
+        });
+
+        if (!commentData) {
+            res.status(404).json({ message: 'No comment found with this id!' });
+            return;
+        }
+
+        res.status(200).json(commentData);
     } catch (err) {
         res.status(500).json(err);
     }
