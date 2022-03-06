@@ -36,7 +36,7 @@ router.get("/newPost", async (req, res) => {
     }
 });
 
-router.get("/editPost:id", async (req, res) => {
+router.get("/editPost/:id", async (req, res) => {
     try {
         const postData = await Post.findByPk(req.params.id, {
             include: [
