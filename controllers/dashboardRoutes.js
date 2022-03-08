@@ -22,7 +22,9 @@ router.get("/", withAuth, async (req, res) => {
 
 router.get("/newPost", withAuth, async (req, res) => {
     try {
-        res.render("new-post");
+        res.render("new-post", {
+            logged_in: true
+        });
     } catch (err) {
         res.status(500).json(err);
     }
