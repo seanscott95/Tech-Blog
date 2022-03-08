@@ -14,7 +14,7 @@ router.get("/", withAuth, async (req, res) => {
         res.render('dashboard', {
             ...user,
             logged_in: true
-    });
+        });
     } catch (err) {
         res.status(500).json(err);
     }
@@ -32,26 +32,19 @@ router.get("/editPost/:id", withAuth, async (req, res) => {
     try {
         const postData = await Post.findByPk(req.params.id, {
             include: [
-              {
-                model: User,
-                attributes: ['name'],
-              },
-              {
-                model: Comment,
-                attributes: ['id', 'description', 'user_id', 'post_id', 'created_at'],
-                include: {
+                {
                     model: User,
                     attributes: ['name'],
-                }
-              },
+                },
             ],
-          });
-      
-          const post = postData.get({ plain: true });
-      
-          res.render('edit-post', {
-            ...post
-          });
+        });
+
+        const post = postData.get({ plain: true });
+
+        res.render('edit-post', {
+            ...post,
+            logged_in: req.session.logged_in
+        });
     } catch (err) {
         res.status(500).json(err);
     }
