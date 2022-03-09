@@ -52,4 +52,26 @@ router.get("/editPost/:id", withAuth, async (req, res) => {
     }
 });
 
+router.get("/editComment/:id", withAuth, async (req, res) => {
+    try {
+        const commentData = await Comment.findByPk(req.params.id, {
+            include: [
+                {
+                    model: User,
+                    attributes: ['name'],
+                },
+            ],
+        });
+
+        const comment = commentData.get({ plain: true });
+
+        res.render('edit-comment', {
+            comment,
+            logged_in: req.session.logged_in
+        });
+    } catch (err) {
+        res.status(500).json(err);
+    }
+});
+
 module.exports = router;
