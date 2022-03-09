@@ -27,6 +27,12 @@
 <p>To install this application please follow these instructions:</p>
 
 - Please have node, npm and mysql installed with your mysql password ready.
+- The application will be invoked by using the following command:
+
+ ```
+  git clone git@github.com:seanscott95/Tech-Blog.git
+ ```
+- Please run ```npm i``` to install the node modules needed for this application.
 - To be safe and not have your password anywhere sensitive please make sure that there is a .gitignore file in the root repository with ```.env``` typed in, if not please make one. 
 - Create a .env file in your current repository to hide your sensitive information.
 - The .env file must contain the following lines:
