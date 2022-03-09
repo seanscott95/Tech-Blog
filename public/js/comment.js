@@ -39,7 +39,7 @@ const delButtonHandler = async (event) => {
         if (response.ok) {
             document.location.reload();
         } else {
-            alert('Failed to delete post');
+            alert('Failed to delete comment');
         }
     }
 };
