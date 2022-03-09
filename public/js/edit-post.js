@@ -16,6 +16,7 @@ const editPostHandler = async (event) => {
       body: JSON.stringify({ title, description }),
       headers: { 'Content-Type': 'application/json' },
     });
+    console.log(response)
 
     if (response.ok) {
       // If successful, redirect the browser to the dashboard
@@ -48,5 +49,5 @@ document
   .addEventListener('submit', editPostHandler);
 
 document
-  .querySelector('.delete-post')
+  .querySelector('#delete-post')
   .addEventListener('click', delButtonHandler);
