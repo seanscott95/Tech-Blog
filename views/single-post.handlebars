@@ -19,10 +19,8 @@
                     <div class="user-info">
                         <p>Comment by {{user.name}} on {{format_date date_created}} </p>
                     </div>
-                    <div class="form-group">
+                    <div class="edit-link">
                         <a href="/dashboard/editComment/{{id}}" class="edit">EDIT</a>
-                        <button class="btn btn-danger" id="delete-comment" data-id="{{comment.id}}"
-                            type="button">Delete Comment</button>
                     </div>
                 </article>
             </div>

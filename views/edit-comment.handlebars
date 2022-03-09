@@ -1,11 +1,13 @@
 <div class="row mb-4 edit-comment">
-    <h2>Edit comment!</h2>
+    <h2>Edit comment!<h2>
     <form class="form edit-form">
         <div class="form-group">
             <label for="description-input">Description:</label>
-            <input class="form-input" type="text" id="description-input" value="{{comment.description}}"/>
+            <input class="form-input" type="text" id="description-input" value="{{comment.description}}" />
             <button class="btn btn-primary" id="update-comment" type="submit">Save Comment</button>
-        </div>    
+            <button class="btn btn-danger" id="delete-comment" data-id="{{comment.id}}"
+                            type="button">Delete Comment</button>
+        </div>
     </form>
 </div>
 
