@@ -9,11 +9,25 @@
         <div class="user-info">
             <p>Post by {{user.name}} on {{format_date date_created}} </p>
         </div>
+        <div class="container container-fluid mt-5 post-comments">
+            {{#each comments as |comment|}}
+            <div class="row mb-4 comment-list">
+                <article class="comment">
+                    <div class="description">
+                        {{description}}
+                    </div>
+                    <div class="user-info">
+                        <p>Comment by {{user.name}} on {{format_date date_created}} </p>
+                    </div>
+                </article>
+            </div>
+            {{/each}}
+        </div>
     </article>
 
     <form class="form new-comment-form">
         <div class="form-group">
-            <textarea name="comment-input"></textarea>
+            <textarea class="comment-input" name="comment-input"></textarea>
             <button type="submit" class="btn btn-primary">Add Comment</button>
         </div>
     </form>
