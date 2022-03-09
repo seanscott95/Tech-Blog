@@ -22,15 +22,13 @@ router.post("/", withAuth, async (req, res) => {
 router.put("/:id", withAuth, async (req, res) => {
     try {
         const commentData = await Comment.update({
-            description: req.body.description,
-            post_id: req.body.post_id,
-            user_id: req.session.user_id,
+            description: req.body.description
         },
-        {
-            where: {
-                id: req.params.id
-            }
-        });
+            {
+                where: {
+                    id: req.params.id
+                }
+            });
 
         if (!commentData) {
             res.status(404).json({ message: 'No comment found with this id!' });
@@ -48,8 +46,7 @@ router.delete("/:id", withAuth, async (req, res) => {
     try {
         const commentData = await Comment.destroy({
             where: {
-                id: req.params.id,
-                user_id: req.session.user_id,
+                id: req.params.id
             },
         });
 

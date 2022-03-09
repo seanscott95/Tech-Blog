@@ -54,6 +54,8 @@ router.get("/editPost/:id", withAuth, async (req, res) => {
 
 router.get("/editComment/:id", withAuth, async (req, res) => {
     try {
+        console.log(" MY req.params.id:", req.params.id);
+
         const commentData = await Comment.findByPk(req.params.id, {
             include: [
                 {
@@ -62,8 +64,10 @@ router.get("/editComment/:id", withAuth, async (req, res) => {
                 },
             ],
         });
+        console.table(commentData)
 
         const comment = commentData.get({ plain: true });
+        console.table(comment);
 
         res.render('edit-comment', {
             comment,
