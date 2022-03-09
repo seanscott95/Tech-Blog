@@ -18,7 +18,6 @@ router.post("/", withAuth, async (req, res) => {
 // Updates a post
 router.put("/:id", withAuth, async (req, res) => {
     try {
-        console.log(req.body);
         const postData = await Post.update({
             title: req.body.title,
             description: req.body.description
@@ -28,6 +27,7 @@ router.put("/:id", withAuth, async (req, res) => {
                     id: req.params.id
                 }
             });
+
         if (!postData) {
             res.status(404).json({ message: 'No post found with this id!' });
             return;
