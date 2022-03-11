@@ -17,7 +17,7 @@ const editCommentHandler = async (event) => {
 
         if (response.ok) {
             // If successful, redirect the browser to the dashboard
-            document.location.replace('/dashboard');
+            window.location.replace(document.referrer);
         } else {
             alert(response.statusText);
         }
@@ -33,7 +33,7 @@ const delButtonHandler = async (event) => {
         });
 
         if (response.ok) {
-            document.location.replace('/dashboard');
+            window.location.replace(document.referrer);
         } else {
             alert('Failed to delete comment');
         }

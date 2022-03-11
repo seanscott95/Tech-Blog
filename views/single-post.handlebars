@@ -3,7 +3,10 @@
         <div class="title">
             <a href="/posts/{{id}}">{{title}}</a>
         </div>
+
+
         <div class="description">
+
             {{description}}
         </div>
         <div class="user-info">
@@ -12,16 +15,20 @@
         <div class="container container-fluid mt-5 post-comments">
             {{#each comments as |comment|}}
             <div class="row mb-4 comment-list">
+
+
                 <article class="comment">
                     <div class="description">
                         {{description}}
                     </div>
                     <div class="user-info">
-                        <p>Comment by {{user.name}} on {{format_date date_created}} </p>
+                        <p>Comment by {{user.name}} on {{format_date date_created}}  </p>
                     </div>
+                    {{#is_same ../user_id comment.user_id }}
                     <div class="edit-link">
-                        <a href="/dashboard/editComment/{{id}}" class="edit">EDIT</a>
+                        <a href="/dashboard/editComment/{{comment.id}}" class="edit">EDIT</a>
                     </div>
+                    {{/is_same}}
                 </article>
             </div>
             {{/each}}
