@@ -1,19 +1,23 @@
-<div class="row mb-4 post-list">
+<div class="row mb-4 post-list text-white">
     <div>
-        <button type="submit"><a href="/dashboard/newPost" class="btn btn-primary">Create a new POST</a></button>
+        <button class="btn" type="submit"><a class="btn btn-primary mt-3 text-white" href="/dashboard/newPost">Create a new POST</a></button>
     </div>
 
-    {{#each posts as |post| }}
-    <article class="post">
-        <div class="title">
-            <a href="/posts/{{id}}">{{title}}</a>
-        </div>
-        <div class="description">
-            {{description}}
-        </div>
-        <div>
-            <a href="/dashboard/editPost/{{id}}" class="edit">EDIT</a>
-        </div>
-    </article>
+    <div class="col-12">
+        {{#each posts as |post| }}
+        <article class="card border-dark bg-secondary col-12 post-list p-2 mt-2">
+            <div class="title card-title h3">
+                <a class="text-info" href="/posts/{{id}}">{{title}}</a>
+            </div>
+            <div class="description form-control b-3">
+                {{description}}
+            </div>
+            <div>
+                <a class="btn text-info" href="/dashboard/editPost/{{id}}" class="edit">EDIT</a>
+            </div>
+        </article>
     {{/each}}
+
+    </div>
+
 </div>

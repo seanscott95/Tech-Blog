@@ -1,15 +1,17 @@
-{{#each posts as |post| }}
-<div class="row mb-4 post-list">
-    <article class="post">
-        <div class="title">
-            <a href="/posts/{{id}}">{{title}}</a>
-        </div>
-        <div class="description">
-            {{description}}
-        </div>
-        <div class="user-info">
-            <p>Post by {{user.name}} on {{format_date date_created}} </p>
-        </div>
-    </article>
+<div class="row">    
+    {{#each posts as |post| }}
+    <div class="card border-dark bg-secondary col-12 post-list m-3 p-3">
+        <article class="post">
+            <div class="title card-title h3">
+                <a class="text-info" href="/posts/{{id}}">{{title}}</a>
+            </div>
+            <div class="description form-control mb-3">
+                {{description}}
+            </div>
+            <div class="user-info form-control">
+                <p>Post by {{user.name}} on {{format_date date_created}} </p>
+            </div>
+        </article>
+    </div>
+    {{/each}}
 </div>
-{{/each}}

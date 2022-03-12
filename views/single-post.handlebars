@@ -1,44 +1,44 @@
 <div class="row mb-4 post-list">
-    <article class="post">
+    <article class="card border-dark bg-secondary col-12 p-2 post">
         <div class="title">
-            <a href="/posts/{{id}}">{{title}}</a>
+            <a class="text-info h3" href="/posts/{{id}}">{{title}}</a>
         </div>
 
-
-        <div class="description">
-
+        <div class="description form-control b-3 mt-3">
             {{description}}
         </div>
-        <div class="user-info">
+
+        <div class="user-info form-control mt-1">
             <p>Post by {{user.name}} on {{format_date date_created}} </p>
-        </div>
-        <div class="container container-fluid mt-5 post-comments">
-            {{#each comments as |comment|}}
-            <div class="row mb-4 comment-list">
-
-
-                <article class="comment">
-                    <div class="description">
-                        {{description}}
-                    </div>
-                    <div class="user-info">
-                        <p>Comment by {{user.name}} on {{format_date date_created}}  </p>
-                    </div>
-                    {{#is_same ../user_id comment.user_id }}
-                    <div class="edit-link">
-                        <a href="/dashboard/editComment/{{comment.id}}" class="edit">EDIT</a>
-                    </div>
-                    {{/is_same}}
-                </article>
-            </div>
-            {{/each}}
         </div>
     </article>
 
+    <h3 class="text-info m-3 p-3">Comments</h3>
+    <div class="container container-fluid post-comments">
+        {{#each comments as |comment|}}
+        <div class="row mb-4 comment-list">
+            <article class="card border-dark bg-secondary col-12 p-2 comment">
+                <div class="description form-control mt-1">
+                    {{description}}
+                </div>
+                <div class="user-info form-control mt-1">
+                    <p>Comment by {{user.name}} on {{format_date date_created}}  </p>
+                </div>
+                
+                {{#is_same ../user_id comment.user_id }}
+                <div class="edit-link">
+                    <a class="edit btn text-info" href="/dashboard/editComment/{{comment.id}}">EDIT</a>
+                </div>
+                {{/is_same}}
+            </article>
+        </div>
+        {{/each}}
+    </div>
+
     <form class="form new-comment-form">
         <div class="form-group">
-            <textarea class="comment-input" name="comment-input"></textarea>
-            <button type="submit" class="btn btn-primary">Add Comment</button>
+            <textarea class="comment-input form-control" name="comment-input" placeholder="Please add a comment..."></textarea>
+            <button type="submit" class="btn btn-primary mt-3">Add Comment</button>
         </div>
     </form>
 </div>
