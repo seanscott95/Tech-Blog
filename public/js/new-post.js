@@ -1,12 +1,10 @@
 const newPostHandler = async (event) => {
     event.preventDefault();
 
-    // Collect values from the login form
     const title = document.querySelector('#title-input').value.trim();
     const description = document.querySelector('#description-input').value.trim();
 
     if (title && description) {
-        // Send a POST request to the API endpoint
         const response = await fetch('/api/posts', {
             method: 'POST',
             body: JSON.stringify({ title, description }),
@@ -14,7 +12,6 @@ const newPostHandler = async (event) => {
         });
 
         if (response.ok) {
-            // If successful, redirect the browser to the dashboard
             document.location.replace('/dashboard');
         } else {
             alert(response.statusText);

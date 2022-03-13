@@ -1,7 +1,6 @@
 const editPostHandler = async (event) => {
   event.preventDefault();
 
-  // Collect values from the login form
   const title = document.querySelector('#title-input').value.trim();
   const description = document.querySelector('#description-input').value.trim();
   const id = window.location.toString().split('/')[
@@ -9,7 +8,6 @@ const editPostHandler = async (event) => {
   ];
 
   if (title && description) {
-    // Send a POST request to the API endpoint
     const response = await fetch(`/api/posts/${id}`, {
       method: 'PUT',
       body: JSON.stringify({ title, description }),
@@ -17,7 +15,6 @@ const editPostHandler = async (event) => {
     });
 
     if (response.ok) {
-      // If successful, redirect the browser to the dashboard
       document.location.replace('/dashboard');
     } else {
       alert(response.statusText);
@@ -40,7 +37,6 @@ const delButtonHandler = async (event) => {
     }
   }
 };
-
 
 document
   .querySelector('.edit-form')

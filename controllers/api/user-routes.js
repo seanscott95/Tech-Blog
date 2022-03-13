@@ -17,6 +17,7 @@ router.post("/", async (req, res) => {
     }
 });
 
+// Signs a user in
 router.post("/login", async (req, res) => {
     try {
 
@@ -49,6 +50,7 @@ router.post("/login", async (req, res) => {
     }
 });
 
+// Logs a user out
 router.post("/logout", async (req, res) => {
     try {
         if (req.session.logged_in) {
