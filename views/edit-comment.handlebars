@@ -3,7 +3,7 @@
     <form class="form edit-form">
         <div class="form-group">
             <label class="text-info h4" for="description-input">Description:</label>
-            <input class="form-input form-control" type="text" rows="5" id="description-input" value="{{comment.description}}" />
+            <textarea class="form-input form-control" rows="5" id="description-input" name="description-input">{{comment.description}}</textarea>
             <button class="btn btn-primary mt-2" id="update-comment" type="submit">Save Comment</button>
             <button class="btn btn-danger mt-2" id="delete-comment" data-id="{{comment.id}}"
                             type="button">Delete Comment</button>
