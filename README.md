@@ -25,14 +25,14 @@
 - [Links](#Links)
 
 ## Screenshots
-- [Links](./public/images/homepage.png)
-- [Links](./public/images/login-signup.png)
-- [Links](./public/images/dashboard.png)
-- [Links](./public/images/create-post.png)
-- [Links](./public/images/edit-post.png)
-- [Links](./public/images/single-post.png)
-- [Links](./public/images/edit-comment.png)
-- [Links](./public/images/comment-deleted-add-comment.png)
+- ![Homepage](./public/images/homepage.png)
+- ![Login-signup](./public/images/login-signup.png)
+- ![Dashboard](./public/images/dashboard.png)
+- ![Create-post](./public/images/create-post.png)
+- ![Edit-post](./public/images/edit-post.png)
+- ![Single-post](./public/images/single-post.png)
+- ![Edit-comment](./public/images/edit-comment.png)
+- ![Comment-deleted-add-comment](./public/images/comment-deleted-add-comment.png)
 
 
 ## Installation 
