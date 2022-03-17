@@ -25,13 +25,29 @@
 - [Links](#Links)
 
 ## Screenshots
+<p>Homepage</p>
+
 - ![Homepage](./public/images/homepage.png)
+<p>Login and signup</p>
+
 - ![Login-signup](./public/images/login-signup.png)
+<p>Dashboard</p>
+
 - ![Dashboard](./public/images/dashboard.png)
+<p>Create post</p>
+
 - ![Create-post](./public/images/create-post.png)
+<p>Edit post</p>
+
 - ![Edit-post](./public/images/edit-post.png)
+<p>Single post</p>
+
 - ![Single-post](./public/images/single-post.png)
+<p>Edit comment</p>
+
 - ![Edit-comment](./public/images/edit-comment.png)
+<p>Comment deleted and add comment</p>
+
 - ![Comment-deleted-add-comment](./public/images/comment-deleted-add-comment.png)
 
 
@@ -90,10 +106,10 @@ When the user wants to logout simply click on the Logout button in the navigatio
 ## Questions 
 <p> To reach me with additional questions please contact me via one of the following methods: </p>
 
-- Link: [GitHub](https://github.com/seanscott95)
-- Link: [Email](mailto:seanms418@gmail.com)
-- Link: [LinkedIn](https://www.linkedin.com/in/sean-scott-18ba07225/)
+- GitHub: [GitHub](https://github.com/seanscott95)
+- Email: [Email](mailto:seanms418@gmail.com)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/sean-scott-18ba07225/)
 
 ## Links
-- Link: [GitHub](https://github.com/seanscott95/Tech-Blog)
-- Link: [Video-Demo]()
+- GitHub: [GitHub](https://github.com/seanscott95/Tech-Blog)
+- Heroku: [Heroku](https://pacific-ravine-00893.herokuapp.com/)
